@@ -1,7 +1,7 @@
-angular.module('livkonApp', ['ngRoute']);
+angular.module('faithtofaith', ['ngRoute']);
 
 // tell module you're routing using ngRoute, then define the routes
-angular.module('livkonApp')
+angular.module('faithtofaith')
 	.config(function($routeProvider) {
 		$routeProvider
 			.when('/', {
@@ -14,9 +14,9 @@ angular.module('livkonApp')
 				controller  : 'loginController'
 			})
 
-			.when('/konnect', {
-				templateUrl : '/html/konnect.html',
-				controller  : 'konnectController'
+			.when('/connect', {
+				templateUrl : '/html/connect.html',
+				controller  : 'connectController'
 			})
 
 
@@ -28,7 +28,7 @@ angular.module('livkonApp')
 			.when('/willNotify.html', {
 				templateUrl : '/html/willNotify.html',
 				controller 	: 'willNotifyController'
-			})
+			}) 
 
 			.when('/signUpSpeaker', {
 				templateUrl : '/html/signUpSpeaker.html',
@@ -50,16 +50,6 @@ angular.module('livkonApp')
 				controller  : 'contactController'
 			})
 
-			.when('/news', {
-				templateUrl : '/html/news.html',
-				controller  : 'newsController'
-			})
-
-			.when('/fakeFactConnect', {
-				templateUrl : '/html/fakeFactConnect.html',
-				controller  : 'fakeFactConnectController'
-			})
-
 			.when('/videoChat', {
 				templateUrl : '/html/videoChat.html',
 				controller 	: 'videoChatController'
@@ -70,7 +60,7 @@ angular.module('livkonApp')
 
 
 
-angular.module('livkonApp')
+angular.module('faithtofaith')
 	.controller('homeController', ['$scope', '$http', '$window', function($scope, $http, $window) {
 		$scope.signupForm = {}
 		$scope.loginForm={}
@@ -122,10 +112,10 @@ angular.module('livkonApp')
 	}]) 
 
 
-angular.module('livkonApp')
-	.controller('konnectController', ['$scope', konnectController]) 
+angular.module('faithtofaith')
+	.controller('connectController', ['$scope', connectController]) 
 
-angular.module('livkonApp')
+angular.module('faithtofaith')
 	.controller('videoChatController', ['$scope', '$http', function($scope, $http) {
 
 		var apiKey = 45525522;
@@ -211,7 +201,7 @@ angular.module('livkonApp')
 	// })
 	}]) 
 
-angular.module('livkonApp')
+angular.module('faithtofaith')
 	.controller('findSpeakerController', ['$scope', '$http', '$window', function($scope, $http, $window) {
 		
 			 $http({
@@ -251,7 +241,7 @@ angular.module('livkonApp')
 			
 	}]) 
 
-angular.module('livkonApp')
+angular.module('faithtofaith')
 	.controller('signUpSpeakerController', ['$scope', '$http', '$window', function ($scope, $http, $window) {
 			$scope.signUpSpeaker = function () {
 			$http ({
@@ -268,17 +258,11 @@ angular.module('livkonApp')
 	}]) 
 
 
-angular.module('livkonApp')
+angular.module('faithtofaith')
 	.controller('aboutController', ['$scope', aboutController]) 
 
 angular.module('livkonApp')
 	.controller('contactController', ['$scope', contactController]) 
-
-angular.module('livkonApp')
-	.controller('newsController', ['$scope', newsController]) 
-
-angular.module('livkonApp')
-	.controller('fakeFactConnectController', ['$scope', fakeFactConnectController]) 
 
 
 // <<<<<<< HEAD
@@ -510,8 +494,8 @@ function signupController ($scope) {
 }
 
 
-function konnectController ($scope) {
-	console.log('konnect Controller!')
+function connectController ($scope) {
+	console.log('connect Controller!')
 }
 
 function speakerServicesController ($scope) {
@@ -533,13 +517,7 @@ function contactController ($scope) {
 	console.log('contact Controller!')
 }
 
-function newsController ($scope) {
-	console.log('news Controller!')
-}
 
-function fakeFactConnectController ($scope) {
-	console.log('fake Fact Connect Controller!')
-}
 
 
 
